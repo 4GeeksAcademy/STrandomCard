@@ -1,1 +1,15 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  background-color: darkgreen;
+}
+#topSuit {
+  font-size: 80px;
+}
+#bottomSuit {
+  font-size: 80px;
+}
+#cardValue {
+  font-size: 100px;
+}
+.red {
+  color: red;
+}

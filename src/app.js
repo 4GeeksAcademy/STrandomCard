@@ -1,11 +1,52 @@
 /* eslint-disable */
 import "bootstrap";
 import "./style.css";
-
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
-
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+window.onload = cardGenerator();
+function cardGenerator() {
+  let numPalo = Math.round(Math.random() * 3) + 1;
+  let palo = "";
+  switch (numPalo) {
+    case 1:
+      palo = "♥";
+      break;
+    case 2:
+      palo = "♦";
+      break;
+    case 3:
+      palo = "♠";
+      break;
+    case 4:
+      palo = "♣";
+      break;
+    default:
+      null;
+  }
+  let cardNum = Math.round(Math.random() * 12) + 1;
+  if (cardNum <= 10 && cardNum != 1) {
+  } else if (cardNum == 11) {
+    cardNum = "J";
+  } else if (cardNum == 12) {
+    cardNum = "Q";
+  } else if (cardNum == 13) {
+    cardNum = "K";
+  } else if (cardNum == 1) {
+    cardNum = "A";
+  }
+  let cardValue = document.getElementById("cardValue");
+  let topSuit = document.getElementById("topSuit");
+  let botSuit = document.getElementById("bottomSuit");
+  cardValue.innerHTML = cardNum;
+  if (palo == "♥" || palo == "♦") {
+    topSuit.setAttribute("class", "red ms-2");
+    botSuit.setAttribute("class", "red ms-auto me-2");
+    topSuit.innerHTML = palo;
+    botSuit.innerHTML = palo;
+  } else {
+    topSuit.setAttribute("class", "ms-2");
+    botSuit.setAttribute("class", "ms-auto me-2");
+    topSuit.innerHTML = palo;
+    botSuit.innerHTML = palo;
+  }
+}
+let newCard = document.getElementById("newCard");
+newCard.addEventListener("click", cardGenerator);
