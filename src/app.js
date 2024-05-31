@@ -22,8 +22,7 @@ function cardGenerator() {
       null;
   }
   let cardNum = Math.round(Math.random() * 12) + 1;
-  if (cardNum <= 10 && cardNum != 1) {
-  } else if (cardNum == 11) {
+  if (cardNum == 11) {
     cardNum = "J";
   } else if (cardNum == 12) {
     cardNum = "Q";
