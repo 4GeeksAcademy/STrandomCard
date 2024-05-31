@@ -3,7 +3,7 @@ import "bootstrap";
 import "./style.css";
 window.onload = cardGenerator();
 function cardGenerator() {
-  let numPalo = Math.round(Math.random() * 3) + 1;
+  const numPalo = Math.round(Math.random() * 3) + 1;
   let palo = "";
   switch (numPalo) {
     case 1:
@@ -32,9 +32,9 @@ function cardGenerator() {
   } else if (cardNum == 1) {
     cardNum = "A";
   }
-  let cardValue = document.getElementById("cardValue");
-  let topSuit = document.getElementById("topSuit");
-  let botSuit = document.getElementById("bottomSuit");
+  const cardValue = document.getElementById("cardValue");
+  const topSuit = document.getElementById("topSuit");
+  const botSuit = document.getElementById("bottomSuit");
   cardValue.innerHTML = cardNum;
   if (palo == "♥" || palo == "♦") {
     topSuit.setAttribute("class", "red ms-2");
@@ -48,5 +48,5 @@ function cardGenerator() {
     botSuit.innerHTML = palo;
   }
 }
-let newCard = document.getElementById("newCard");
+const newCard = document.getElementById("newCard");
 newCard.addEventListener("click", cardGenerator);
